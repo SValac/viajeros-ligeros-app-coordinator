@@ -7,14 +7,14 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-/** UI tests for [com.viajerosligeros.app.ui.main.MainScreen]. */
+/** UI tests for [com.viajerosligeros.app.ui.main.TravelsScreen]. */
 class MainScreenTest {
 
   @get:Rule val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
   @Before
   fun setup() {
-    composeTestRule.setContent { MainScreen(FAKE_DATA) }
+    composeTestRule.setContent { TravelsScreen(FAKE_DATA) }
   }
 
   @Test

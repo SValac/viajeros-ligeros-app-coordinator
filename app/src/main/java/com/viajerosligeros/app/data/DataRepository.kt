@@ -1,12 +1,18 @@
 package com.viajerosligeros.app.data
 
+import com.viajerosligeros.app.data.model.Travel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 interface DataRepository {
-  val data: Flow<List<String>>
+  val travels: Flow<List<Travel>>
 }
 
 class DefaultDataRepository : DataRepository {
-  override val data: Flow<List<String>> = flow { emit(listOf("Android")) }
+
+  override val travels: Flow<List<Travel>> = flow {
+    delay(1500)
+    emit(sampleTravels)
+  }
 }
