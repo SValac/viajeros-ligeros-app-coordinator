@@ -1,4 +1,4 @@
-package com.example.viajeros_ligeros_application_coordinator.ui.main
+package com.viajerosligeros.app.ui.main
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
@@ -9,8 +9,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation3.runtime.NavKey
-import com.example.viajeros_ligeros_application_coordinator.data.DefaultDataRepository
-import com.example.viajeros_ligeros_application_coordinator.theme.ViajerosLigerosApplicationCoordinatorTheme
+import com.viajerosligeros.app.data.DefaultDataRepository
+import com.viajerosligeros.app.theme.ViajerosLigerosTheme
 
 @Composable
 fun MainScreen(
@@ -45,11 +45,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
-  ViajerosLigerosApplicationCoordinatorTheme { MainScreen(listOf("Android")) }
+  ViajerosLigerosTheme { MainScreen(listOf("Android")) }
 }
 
 @Preview(showBackground = true, widthDp = 340)
 @Composable
 fun MainScreenPortraitPreview() {
-  ViajerosLigerosApplicationCoordinatorTheme { MainScreen(listOf("Android")) }
+  ViajerosLigerosTheme { MainScreen(listOf("Android")) }
 }

@@ -1,9 +1,9 @@
-package com.example.viajeros_ligeros_application_coordinator.ui.main
+package com.viajerosligeros.app.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.viajeros_ligeros_application_coordinator.data.DataRepository
-import com.example.viajeros_ligeros_application_coordinator.ui.main.MainScreenUiState.Success
+import com.viajerosligeros.app.data.DataRepository
+import com.viajerosligeros.app.ui.main.MainScreenUiState.Success
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch

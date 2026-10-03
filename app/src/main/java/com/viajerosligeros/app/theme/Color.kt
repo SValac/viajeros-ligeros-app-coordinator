@@ -1,4 +1,4 @@
-package com.example.viajeros_ligeros_application_coordinator.theme
+package com.viajerosligeros.app.theme
 
 import androidx.compose.ui.graphics.Color
 

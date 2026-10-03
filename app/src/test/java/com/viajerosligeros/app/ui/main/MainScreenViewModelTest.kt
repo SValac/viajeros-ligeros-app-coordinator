@@ -1,6 +1,6 @@
-package com.example.viajeros_ligeros_application_coordinator.ui.main
+package com.viajerosligeros.app.ui.main
 
-import com.example.viajeros_ligeros_application_coordinator.data.DataRepository
+import com.viajerosligeros.app.data.DataRepository
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first

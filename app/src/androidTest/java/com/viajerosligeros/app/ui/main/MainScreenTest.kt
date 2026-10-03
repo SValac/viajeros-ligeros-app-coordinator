@@ -1,4 +1,4 @@
-package com.example.viajeros_ligeros_application_coordinator.ui.main
+package com.viajerosligeros.app.ui.main
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -7,7 +7,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-/** UI tests for [com.example.viajeros_ligeros_application_coordinator.ui.main.MainScreen]. */
+/** UI tests for [com.viajerosligeros.app.ui.main.MainScreen]. */
 class MainScreenTest {
 
   @get:Rule val composeTestRule = createAndroidComposeRule<ComponentActivity>()

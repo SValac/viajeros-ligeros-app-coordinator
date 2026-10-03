@@ -1,4 +1,4 @@
-package com.example.viajeros_ligeros_application_coordinator.theme
+package com.viajerosligeros.app.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -30,7 +30,7 @@ private val LightColorScheme =
   )
 
 @Composable
-fun ViajerosLigerosApplicationCoordinatorTheme(
+fun ViajerosLigerosTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
   // Dynamic color is available on Android 12+
   dynamicColor: Boolean = true,

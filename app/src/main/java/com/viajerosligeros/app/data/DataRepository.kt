@@ -1,4 +1,4 @@
-package com.example.viajeros_ligeros_application_coordinator.data
+package com.viajerosligeros.app.data
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
