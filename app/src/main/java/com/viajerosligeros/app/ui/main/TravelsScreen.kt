@@ -53,7 +53,7 @@ internal fun TravelsScreen(data: List<Travel>, modifier: Modifier = Modifier) {
     items(data, key = {it.id}) { travel ->
       Card(modifier = Modifier.fillParentMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
-          Text(travel.name, style = MaterialTheme.typography.titleMedium)
+          Text(travel.label, style = MaterialTheme.typography.titleMedium)
           Text(travel.startDate)
           Text(travel.status)
         }
