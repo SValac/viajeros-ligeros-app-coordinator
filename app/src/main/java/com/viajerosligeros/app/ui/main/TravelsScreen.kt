@@ -21,6 +21,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation3.runtime.NavKey
 import com.viajerosligeros.app.data.DefaultDataRepository
+import com.viajerosligeros.app.data.SupabaseTravelRepository
 import com.viajerosligeros.app.data.model.Travel
 import com.viajerosligeros.app.data.sampleTravels
 import com.viajerosligeros.app.theme.ViajerosLigerosTheme
@@ -29,7 +30,7 @@ import com.viajerosligeros.app.theme.ViajerosLigerosTheme
 fun TravelsScreen(
   onItemClick: (NavKey) -> Unit,
   modifier: Modifier = Modifier,
-  viewModel: TravelsScreenViewModel = viewModel { TravelsScreenViewModel(DefaultDataRepository()) },
+  viewModel: TravelsScreenViewModel = viewModel { TravelsScreenViewModel(SupabaseTravelRepository()) },
 ) {
   val state by viewModel.uiState.collectAsStateWithLifecycle()
   when (val s = state) {
