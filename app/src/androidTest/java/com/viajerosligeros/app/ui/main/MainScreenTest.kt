@@ -3,6 +3,7 @@ package com.viajerosligeros.app.ui.main
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import com.viajerosligeros.app.data.sampleTravels
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -23,4 +24,4 @@ class MainScreenTest {
   }
 }
 
-private val FAKE_DATA = listOf("Sample1", "Sample2", "Sample3")
+private val FAKE_DATA = sampleTravels

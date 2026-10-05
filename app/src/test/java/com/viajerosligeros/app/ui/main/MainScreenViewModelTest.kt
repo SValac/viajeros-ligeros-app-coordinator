@@ -1,6 +1,8 @@
 package com.viajerosligeros.app.ui.main
 
 import com.viajerosligeros.app.data.DataRepository
+import com.viajerosligeros.app.data.model.Travel
+import com.viajerosligeros.app.data.sampleTravels
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -23,5 +25,5 @@ class MainScreenViewModelTest {
 }
 
 private class FakeMyModelRepository : DataRepository {
-  override val data: Flow<List<String>> = flow { emit(listOf("Sample")) }
+  override val travels: Flow<List<Travel>> = flow { emit(sampleTravels) }
 }
