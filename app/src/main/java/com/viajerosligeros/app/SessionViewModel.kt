@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class SessionViewModel(private val authRepository: AuthRepository) : ViewModel() {
     val authState: StateFlow<AuthState> =
@@ -25,6 +26,12 @@ class SessionViewModel(private val authRepository: AuthRepository) : ViewModel()
                 SharingStarted.WhileSubscribed(5000),
                 AuthState.Loading
             )
+
+    fun signOut() {
+        viewModelScope.launch {
+            authRepository.signOut()
+        }
+    }
 }
 
 
