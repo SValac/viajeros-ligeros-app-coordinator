@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.flow
 
 interface DataRepository {
   val travels: Flow<List<Travel>>
+
+  fun travel(id: String): Flow<Travel>
 }
 
 class DefaultDataRepository : DataRepository {
@@ -15,4 +17,10 @@ class DefaultDataRepository : DataRepository {
     delay(1500)
     emit(sampleTravels)
   }
+
+  override fun travel(id: String): Flow<Travel> {
+    return flow { emit( sampleTravels.first { travel -> travel.id == id } ) };
+  }
+
+
 }
