@@ -21,7 +21,10 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import com.viajerosligeros.app.data.DataRepository
 import com.viajerosligeros.app.data.SupabaseAuthRepository
+import com.viajerosligeros.app.data.SupabaseTravelRepository
+import com.viajerosligeros.app.ui.details.TravelDetailsViewModel
 import com.viajerosligeros.app.ui.login.LoginScreen
 import com.viajerosligeros.app.ui.main.TravelsScreen
 
@@ -59,9 +62,11 @@ fun MainNavigation() {
         entryProvider =
             entryProvider {
                 entry<Login> {
-                    LoginScreen(modifier = Modifier
-                        .safeDrawingPadding()
-                        .padding(16.dp))
+                    LoginScreen(
+                        modifier = Modifier
+                            .safeDrawingPadding()
+                            .padding(16.dp)
+                    )
                 }
                 entry<Main> {
                     Column(modifier = Modifier.safeDrawingPadding()) {
@@ -72,10 +77,22 @@ fun MainNavigation() {
                             Text("Cerrar sesión")
                         }
                         TravelsScreen(
-                            onItemClick = { navKey -> backStack.add(navKey) },
+                            onItemClick = { travelId -> backStack.add(TravelDetails(travelId)) },
                             modifier = Modifier
                                 .padding(16.dp),
                         )
+                    }
+                }
+                entry<TravelDetails> { key ->
+                    val travelDetailsViewModel = viewModel {
+                        TravelDetailsViewModel(
+                            dataRepository = SupabaseTravelRepository(),
+                            id = key.id
+                        )
+                    }
+                    val travelState by travelDetailsViewModel.uiState.collectAsStateWithLifecycle()
+                    Column(Modifier.safeDrawingPadding()) {
+                        Text(travelState.toString())
                     }
                 }
             },
