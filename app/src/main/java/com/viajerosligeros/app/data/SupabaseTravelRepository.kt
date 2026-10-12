@@ -8,11 +8,24 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 
-class SupabaseTravelRepository: DataRepository {
+class SupabaseTravelRepository : DataRepository {
     override val travels: Flow<List<Travel>> = flow {
-     emit(supabase
-         .from("travels")
-         .select(Columns.list("id", "label", "start_date", "status"))
-         .decodeList<Travel>())
+        emit(
+            supabase
+                .from("travels")
+                .select(Columns.list("id", "label", "start_date", "status"))
+                .decodeList<Travel>()
+        )
+    }
+
+    override fun travel(id: String): Flow<Travel> = flow {
+        emit(
+            supabase
+            .from("travels")
+            .select(Columns.list("id", "label", "start_date", "status")) {
+                filter { eq("id", id) }
+            }
+            .decodeSingle<Travel>()
+        )
     }
 }
